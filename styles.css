@@ -1,0 +1,28 @@
+/*
+Jeremy Henry-Atohengbe
+Homework 2: My Movie Review
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("background.png");
+    font: 8pt Verdana, Tahoma, sans-serif;
+}
+
+#banner {
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    background: url("bannerbackground.png") repeat-x;
+}
+
+#banner img {
+    width: 974px;
+    height: 50px;
+}
+
+h1 {
+    text-align: center;
+    font: bold 24pt Tahoma, Verdana, sans-serif;
+}
