@@ -6,7 +6,7 @@ Homework 2: My Movie Review
 body {
     margin: 0;
     padding: 0;
-    background-image: url("background.png");
+    background-image: url("images/background.png");
     font: 8pt Verdana, Tahoma, sans-serif;
 }
 
@@ -14,7 +14,7 @@ body {
     height: 50px;
     overflow: hidden;
     text-align: center;
-    background: url("bannerbackground.png") repeat-x;
+    background: url("images/bannerbackground.png") repeat-x;
 }
 
 #banner img {
@@ -25,4 +25,148 @@ body {
 h1 {
     text-align: center;
     font: bold 24pt Tahoma, Verdana, sans-serif;
+}
+
+#content {
+    width: 800px;
+    margin: 0 auto;
+    border: 4px solid gray;
+}
+
+@supports (display: grid) {
+    #content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 250px;
+        grid-template-areas:
+            "reviews overview"
+            "counter counter";
+    }
+
+    #reviews {
+        grid-area: reviews;
+        min-width: 0;
+    }
+
+    #overview {
+        grid-area: overview;
+    }
+
+    #counter {
+        grid-area: counter;
+    }
+}
+
+#rating {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 5px;
+    min-height: 83px;
+    color: white;
+    background: url("images/rottenbackground.png") repeat-x #29451B;
+}
+
+#rating img {
+    width: 98px;
+    height: 83px;
+    align-self: center;
+}
+
+.score {
+    color: red;
+    font-size: 48pt;
+    font-weight: bold;
+}
+
+#review-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+}
+
+.review-column {
+    box-sizing: border-box;
+    min-width: 0;
+    margin: 0 2%;
+}
+
+.review-column + .review-column {
+    margin-left: 0;
+    margin-right: 4%;
+}
+
+.review {
+    margin-bottom: 3em;
+}
+
+.quote {
+    padding: 8px;
+    border: 2px solid gray;
+    background-color: #E1D697;
+    font-weight: bold;
+    overflow: auto;
+}
+
+.quote img {
+    float: left;
+    margin-right: 5px;
+}
+
+.critic {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.critic img {
+    flex: 0 0 35px;
+    width: 35px;
+    height: 33px;
+}
+
+.publication {
+    font-style: italic;
+}
+
+#overview {
+    background-color: #A2B964;
+    font: 8pt Arial, sans-serif;
+}
+
+#overview > img {
+    display: block;
+    width: 250px;
+    height: auto;
+}
+
+#overview dl {
+    padding: 0 10px;
+}
+
+#overview dt {
+    margin-top: 1em;
+}
+
+#overview dd {
+    margin-left: 40px;
+}
+
+#counter {
+    margin: 0;
+    padding: 5px;
+    background-color: #A2B964;
+    text-align: center;
+}
+
+#validators {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#validators img {
+    display: block;
+    border: 0;
 }
