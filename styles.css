@@ -49,6 +49,7 @@ h1 {
 
     #overview {
         grid-area: overview;
+        min-width: 0;
     }
 
     #counter {
@@ -79,20 +80,15 @@ h1 {
 }
 
 #review-columns {
+    box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
+    grid-template-columns: 47% 47%;
+    column-gap: 2%;
+    justify-content: center;
 }
 
 .review-column {
-    box-sizing: border-box;
     min-width: 0;
-    margin: 0 2%;
-}
-
-.review-column + .review-column {
-    margin-left: 0;
-    margin-right: 4%;
 }
 
 .review {
@@ -169,4 +165,72 @@ h1 {
 #validators img {
     display: block;
     border: 0;
+}
+
+a:focus {
+    outline: 3px solid #183C00;
+    outline-offset: 3px;
+}
+
+@media screen and (max-width: 820px) {
+    #content {
+        width: calc(100% - 24px);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        padding-bottom: 55px;
+        font-size: 10pt;
+    }
+
+    #content {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "reviews"
+            "overview"
+            "counter";
+    }
+
+    #review-columns {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+        padding: 0 2%;
+    }
+
+    #overview {
+        font-size: 10pt;
+    }
+
+    #overview > img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    #validators {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 4px;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 20pt;
+    }
+
+    #rating {
+        padding-bottom: 5px;
+    }
+
+    .critic {
+        flex-wrap: wrap;
+    }
+
+    .critic > span {
+        flex: 1 1 180px;
+        overflow-wrap: break-word;
+    }
 }
